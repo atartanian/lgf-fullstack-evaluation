@@ -1,0 +1,19 @@
+version: "3.8"
+services:
+  lgf_fullstack_evaluation_app:
+    build: ./services/backend
+    ports:
+      - 80:80
+  db:
+    image: mariadb
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: lightfields
+      MARIADB_DATABASE: db
+    ports:
+      - 3606:3606
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - 8080:8080

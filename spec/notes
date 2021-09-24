@@ -1,0 +1,58 @@
+database tables
+
+- list
+    - id
+    - name
+    - user_id
+- list_item
+    - id
+    - list_id
+    - parent_list_item_id
+    - position
+    - completed
+
+
+list json schema
+
+"list name": {
+    "id": 1234,
+    "list_name": "list name",
+    "items": [ list_items ]
+}
+
+
+list item json schema
+
+{
+    "id": 1,
+    "content": UTF-8 sanitized string
+    "position": 1,
+    "items": [ list_items ],
+    "completed": false
+}
+
+
+front end features
+
+Adding bullet points Adding text to bullet points
+ - press enter
+
+Nesting bullet points indefinitely (a bullet may have any number of nested children, which in turn may have any number of nested children, etc.)
+    - tab/shift-tab to indent/unindent current bullet
+
+Removing bullets (by deleting content using backspace or delete)
+The ability to mark a bullet as "done" (strikethrough effect)
+    - checkbox as bulletpoint?
+
+Expanding and collapsing bullets, which shows and hides nested content
+
+Being able to click on a bullet to temporarily scope the app to only that bullet
+
+Being able to go back in the scope hierarchy using a back button
+
+Being able to filter visible bullets using an exact match by typing into a provided text input
+P
+ersisting this content in the backend and exposing a thoughtfully designed API for use by the front-end
+
+The mode of storage is up to you, but a scalable solution is preferred
+Changes should be saved asynchronously
